@@ -10,7 +10,7 @@
      Edit the text between the tags. Keep it short.
      ═══════════════════════════════════════════════════════════ -->
 <title>Sunbehm Home Watch &amp; Concierge — Detroit Lakes &amp; Frazee, MN</title>
-<meta name="description" content="Trusted home watch and concierge care for lake homes across Becker County, Minnesota. Locally owned. Trusted care while you're away.">
+<meta name="description" content="Trusted home watch and concierge care for lake homes and seasonal residents across Becker County, Minnesota. Locally owned. Trusted care, close to home.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,21 +59,28 @@ nav {
 }
 nav.scrolled { background: rgba(26,26,26,0.97); padding: 14px 48px; box-shadow: 0 1px 0 var(--border); }
 .nav-logo {
+  display: flex; align-items: center; gap: 12px; text-decoration: none;
   font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500;
-  letter-spacing: 5px; text-transform: uppercase; color: var(--gold); text-decoration: none;
+  letter-spacing: 5px; text-transform: uppercase; color: var(--gold);
 }
+.nav-logo img { height: 56px; width: auto; display: block; transition: height .35s; }
+nav.scrolled .nav-logo img { height: 44px; }
 .nav-links { display: flex; gap: 38px; list-style: none; align-items: center; }
 .nav-links a {
   font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
-  color: var(--text-muted); text-decoration: none; transition: color .2s;
+  color: var(--text-light); text-decoration: none; transition: color .2s;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
 }
 .nav-links a:hover { color: var(--gold); }
 .nav-call {
-  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--dark); background: var(--gold); padding: 11px 22px;
-  text-decoration: none; transition: background .2s; border-radius: 1px;
+  font-size: 15px; font-weight: 700; letter-spacing: 0.5px;
+  color: #ffffff; background: rgba(26,26,26,0.92); padding: 13px 24px;
+  text-decoration: none; transition: all .2s; border-radius: 2px;
+  border: 2px solid var(--gold);
+  box-shadow: 0 3px 14px rgba(0,0,0,0.5);
+  text-transform: none;
 }
-.nav-call:hover { background: var(--gold-light); }
+.nav-call:hover { background: var(--gold); color: var(--dark); transform: translateY(-1px); }
 .nav-toggle { display: none; background: none; border: none; color: var(--gold); font-size: 26px; cursor: pointer; }
 
 /* ── HERO ──────────────────────────────────────── */
@@ -106,16 +113,25 @@ nav.scrolled { background: rgba(26,26,26,0.97); padding: 14px 48px; box-shadow: 
   font-size: clamp(20px, 3vw, 30px); color: var(--light); margin-top: 22px;
   opacity: 0; animation: fadeUp 1s ease .6s forwards;
 }
-.hero-actions { margin-top: 44px; display: flex; gap: 18px; flex-wrap: wrap; justify-content: center;
+.hero-actions { margin-top: 50px; display: flex; gap: 18px; flex-wrap: wrap; justify-content: center;
   opacity: 0; animation: fadeUp 1s ease .8s forwards; }
 .btn {
-  font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none;
-  padding: 16px 34px; border-radius: 1px; transition: all .25s; display: inline-block;
+  font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; text-decoration: none;
+  padding: 18px 38px; border-radius: 2px; transition: all .25s; display: inline-block;
 }
-.btn-gold { background: var(--gold); color: var(--dark); }
-.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
-.btn-outline { border: 1px solid var(--gold); color: var(--gold); }
-.btn-outline:hover { background: var(--gold); color: var(--dark); transform: translateY(-2px); }
+.btn-gold {
+  background: var(--gold); color: var(--dark);
+  border: 2px solid var(--gold);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+}
+.btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-2px); }
+.btn-outline {
+  background: rgba(255,255,255,0.10);
+  border: 2px solid #ffffff; color: #ffffff;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+}
+.btn-outline:hover { background: #ffffff; color: var(--dark); transform: translateY(-2px); }
 .scroll-cue {
   position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
   color: var(--gold); font-size: 22px; opacity: 0; animation: fadeIn 1s ease 1.4s forwards, bob 2s ease-in-out 2s infinite;
@@ -153,10 +169,14 @@ section { padding: 110px 48px; }
 .services .section-kicker { color: var(--gold); }
 .services .section-title { color: var(--text-dark); }
 .services .section-intro { color: #6a6253; }
-.svc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+.starting-line {
+  text-align: center; font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 21px; color: var(--gold); margin: -44px auto 56px;
+}
+.svc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; align-items: stretch; }
 .svc-card {
-  background: #fff; border: 1px solid #e6ddc9; padding: 44px 32px; transition: transform .3s, box-shadow .3s;
-  position: relative; overflow: hidden;
+  background: #fff; border: 1px solid #e6ddc9; padding: 44px 32px 36px; transition: transform .3s, box-shadow .3s;
+  position: relative; display: flex; flex-direction: column;
 }
 .svc-card::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold);
@@ -164,9 +184,82 @@ section { padding: 110px 48px; }
 }
 .svc-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(26,26,26,.10); }
 .svc-card:hover::before { transform: scaleX(1); }
-.svc-num { font-family: 'Cormorant Garamond', serif; font-size: 30px; color: var(--gold); margin-bottom: 14px; }
-.svc-card h3 { font-size: 27px; color: var(--text-dark); margin-bottom: 14px; }
-.svc-card p { color: #6a6253; font-size: 15px; }
+/* Featured (Most Popular) tier */
+.svc-card.featured {
+  border: 2px solid var(--gold); box-shadow: 0 14px 40px rgba(201,160,82,.18);
+}
+.svc-card.featured::before { transform: scaleX(1); height: 4px; }
+.svc-badge {
+  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+  background: var(--gold); color: var(--dark); font-family: 'Montserrat', sans-serif;
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500;
+  padding: 6px 18px; border-radius: 1px; white-space: nowrap;
+}
+.svc-num { font-family: 'Cormorant Garamond', serif; font-size: 30px; color: var(--gold); margin-bottom: 10px; }
+.svc-card h3 { font-size: 27px; color: var(--text-dark); margin-bottom: 8px; }
+.svc-card .svc-sub { color: #8a8270; font-size: 13px; font-style: italic; margin-bottom: 22px; }
+.svc-includes { list-style: none; margin: 0 0 28px; padding: 0; flex-grow: 1; }
+.svc-includes li {
+  position: relative; padding-left: 26px; margin-bottom: 12px; color: #5a5346; font-size: 14.5px; line-height: 1.5;
+}
+.svc-includes li::before {
+  content: '✓'; position: absolute; left: 0; top: 0; color: var(--gold); font-weight: 700;
+}
+.svc-includes .carry { color: #8a8270; font-style: italic; }
+.svc-includes .carry::before { content: '+'; font-size: 17px; line-height: 1.2; }
+.svc-quote {
+  display: block; text-align: center; font-family: 'Montserrat', sans-serif;
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none;
+  padding: 14px 20px; border-radius: 1px; transition: all .25s; margin-top: auto;
+  border: 1px solid var(--gold); color: var(--gold-dark, #8a6a2e);
+}
+.svc-quote:hover { background: var(--gold); color: #fff; }
+.svc-card.featured .svc-quote { background: var(--gold); color: #fff; border-color: var(--gold); }
+.svc-card.featured .svc-quote:hover { background: var(--gold-light); border-color: var(--gold-light); }
+
+/* ── CONCIERGE (year-round / aging adults) ─────── */
+.concierge { background: var(--dark); position: relative; }
+.concierge .section-kicker { color: var(--gold); }
+.conc-rate {
+  text-align: center; font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 21px; color: var(--gold); margin: -44px auto 56px;
+}
+.conc-audiences { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-bottom: 56px; }
+.aud-card {
+  background: var(--dark-2); border: 1px solid var(--border); padding: 38px 34px;
+  transition: transform .3s, border-color .3s;
+}
+.aud-card:hover { transform: translateY(-5px); border-color: var(--gold); }
+.aud-card .aud-tag {
+  font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+}
+.aud-card h3 { font-size: 28px; color: var(--text-light); margin-bottom: 14px; }
+.aud-card p { color: #c9c2b4; font-size: 15px; line-height: 1.7; }
+.conc-services {
+  background: var(--dark-2); border: 1px solid var(--border); padding: 44px 40px; text-align: center;
+}
+.conc-services h3 { font-size: 26px; color: var(--gold); margin-bottom: 28px; font-style: italic; }
+.conc-list {
+  display: grid; grid-template-columns: repeat(2,1fr); gap: 14px 40px; max-width: 760px; margin: 0 auto 36px;
+  text-align: left;
+}
+.conc-list li {
+  list-style: none; position: relative; padding-left: 28px; color: #d8d2c6; font-size: 15px; line-height: 1.6;
+}
+.conc-list li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+.conc-cta { margin-top: 8px; }
+
+/* Recovery Watch highlight band */
+.recovery {
+  margin-top: 30px; background: linear-gradient(135deg, rgba(201,160,82,0.10), rgba(201,160,82,0.03));
+  border: 1px solid var(--gold); padding: 40px; text-align: center;
+}
+.recovery .rec-tag {
+  font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+}
+.recovery h3 { font-size: 30px; color: var(--text-light); margin-bottom: 16px; font-style: normal; }
+.recovery p { color: #d8d2c6; font-size: 15.5px; line-height: 1.75; max-width: 64ch; margin: 0 auto 14px; }
+.recovery .rec-note { color: var(--gold); font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 19px; }
 
 /* ── SERVICE AREA ──────────────────────────────── */
 .area { background: var(--dark-2); position: relative; }
@@ -214,7 +307,8 @@ section { padding: 110px 48px; }
 
 /* ── FOOTER ────────────────────────────────────── */
 footer { background: var(--dark-2); padding: 60px 48px 40px; text-align: center; border-top: 1px solid var(--border); }
-.footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 26px; letter-spacing: 6px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.footer-logo { margin-bottom: 12px; }
+.footer-logo img { height: 130px; width: auto; }
 .footer-tag { font-style: italic; font-family: 'Cormorant Garamond', serif; color: var(--text-muted); margin-bottom: 26px; }
 .footer-contact { color: var(--text-muted); font-size: 14px; line-height: 2; }
 .footer-contact a { color: var(--text-light); text-decoration: none; }
@@ -236,6 +330,8 @@ footer { background: var(--dark-2); padding: 60px 48px 40px; text-align: center;
   .welcome-grid, .area-grid { grid-template-columns: 1fr; gap: 36px; }
   .welcome-img img, .area-img img { height: 380px; }
   .svc-grid { grid-template-columns: 1fr; }
+  .conc-audiences { grid-template-columns: 1fr; }
+  .conc-list { grid-template-columns: 1fr; gap: 12px; }
   .form-row { grid-template-columns: 1fr; }
 }
 </style>
@@ -246,10 +342,11 @@ footer { background: var(--dark-2); padding: 60px 48px 40px; text-align: center;
      NAVIGATION BAR
      ═══════════════════════════════════════════════════════════ -->
 <nav id="nav">
-  <a href="#top" class="nav-logo">Sunbehm</a>
+  <a href="#top" class="nav-logo"><img src="assets/logomark.png" alt="Sunbehm Home Watch &amp; Concierge"></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#welcome">About</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="#concierge">Concierge</a></li>
     <li><a href="#area">Service Area</a></li>
     <li><a href="#contact">Contact</a></li>
     <!-- ⬇️ PHONE NUMBER (nav button). Edit in BOTH the tel: and the visible text ⬇️ -->
@@ -266,7 +363,7 @@ footer { background: var(--dark-2); padding: 60px 48px 40px; text-align: center;
   <!-- ⬇️ MAIN HEADLINE ⬇️ -->
   <h1>Your Lake Home, in Trusted Hands</h1>
   <!-- ⬇️ TAGLINE ⬇️ -->
-  <div class="hero-tagline">Trusted Care While You're Away</div>
+  <div class="hero-tagline">Trusted Care, Close to Home</div>
   <div class="hero-actions">
     <a href="#contact" class="btn btn-gold">Request a Visit</a>
     <a href="#services" class="btn btn-outline">Our Services</a>
@@ -301,27 +398,115 @@ footer { background: var(--dark-2); padding: 60px 48px 40px; text-align: center;
   <div class="wrap">
     <div class="section-kicker">What We Do</div>
     <h2 class="section-title">Services</h2>
-    <p class="section-intro">Comprehensive care for seasonal and lake properties — from routine watch visits to the extra help that makes coming home effortless.</p>
+    <p class="section-intro">Comprehensive care for seasonal and lake properties — choose the level of care that fits your home and how hands-off you'd like to be.</p>
+    <!-- ⬇️ "STARTING AT" PRICE LINE — edit the number if your rates change ⬇️ -->
+    <p class="starting-line">Home Watch Visits starting at $55</p>
+
     <div class="svc-grid">
-      <!-- ⬇️ SERVICE CARD 1 ⬇️ -->
+
+      <!-- ⬇️ TIER 1 — ESSENTIAL WATCH ⬇️ -->
       <div class="svc-card reveal">
         <div class="svc-num">01</div>
-        <h3>Home Watch</h3>
-        <p>Regular interior and exterior inspections on a weekly or biweekly schedule. We check for leaks, intrusion, mechanical issues, pests, and weather damage — then send you a photo report after every visit.</p>
+        <h3>Essential Watch</h3>
+        <p class="svc-sub">Peace of mind, covered.</p>
+        <ul class="svc-includes">
+          <li>Routine home watch visits, weekly or biweekly</li>
+          <li>Full interior &amp; exterior inspection</li>
+          <li>Checks for leaks, intrusion, pests &amp; weather damage</li>
+          <li>Photo report after every visit</li>
+        </ul>
+        <a href="#contact" class="svc-quote">Request a Quote</a>
       </div>
-      <!-- ⬇️ SERVICE CARD 2 ⬇️ -->
-      <div class="svc-card reveal">
+
+      <!-- ⬇️ TIER 2 — WATCH + CONCIERGE  (Most Popular) ⬇️ -->
+      <div class="svc-card featured reveal">
+        <div class="svc-badge">Most Popular</div>
         <div class="svc-num">02</div>
-        <h3>Concierge</h3>
-        <p>The extra hands you need from afar — mail and package handling, contractor access, arrival and departure prep, vehicle starting, and the small tasks that keep your property ready and welcoming.</p>
+        <h3>Watch + Concierge</h3>
+        <p class="svc-sub">Watching, plus a helping hand.</p>
+        <ul class="svc-includes">
+          <li class="carry">Everything in Essential Watch</li>
+          <li>Mail &amp; package handling</li>
+          <li>Contractor access &amp; coordination</li>
+          <li>Arrival &amp; departure preparation</li>
+          <li>Plant care</li>
+          <li>Errands &amp; small tasks</li>
+        </ul>
+        <a href="#contact" class="svc-quote">Request a Quote</a>
       </div>
-      <!-- ⬇️ SERVICE CARD 3 ⬇️ -->
+
+      <!-- ⬇️ TIER 3 — FULL SEASONAL CARE ⬇️ -->
       <div class="svc-card reveal">
         <div class="svc-num">03</div>
-        <h3>Snow Removal</h3>
-        <p>Reliable winter clearing so your driveway and walkways stay safe and accessible all season. Coordinated per snowfall, with clear per-event pricing and no surprises.</p>
+        <h3>Full Seasonal Care</h3>
+        <p class="svc-sub">Completely hands-off.</p>
+        <ul class="svc-includes">
+          <li class="carry">Everything in Watch + Concierge</li>
+          <li>Snow removal, coordinated per snowfall</li>
+          <li>Seasonal open &amp; close support</li>
+          <li>Priority scheduling</li>
+        </ul>
+        <a href="#contact" class="svc-quote">Request a Quote</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CONCIERGE  (year-round help / aging adults & families)
+     ═══════════════════════════════════════════════════════════ -->
+<section class="concierge" id="concierge">
+  <div class="wrap">
+    <div class="section-kicker">Year-Round Help</div>
+    <h2 class="section-title">Concierge &amp; Home Help</h2>
+    <p class="section-intro">More than watching an empty home — a trusted local hand for the things that make daily life easier, all year long.</p>
+    <!-- ⬇️ CONCIERGE HOURLY RATE — edit the number if your rate changes ⬇️ -->
+    <p class="conc-rate">Concierge &amp; home help — $45/hour</p>
+
+    <div class="conc-audiences">
+      <!-- ⬇️ AUDIENCE CARD 1 — SEASONAL ⬇️ -->
+      <div class="aud-card reveal">
+        <div class="aud-tag">For Seasonal Residents</div>
+        <h3>Care that follows the seasons</h3>
+        <p>In the winter, we watch over your empty home. In the summer, when you're back at the lake, we're the helping hand for chores, projects, and the everyday tasks that take time away from enjoying the season. One trusted person, all year round.</p>
+      </div>
+      <!-- ⬇️ AUDIENCE CARD 2 — AGING ADULTS & FAMILIES ⬇️ -->
+      <div class="aud-card reveal">
+        <div class="aud-tag">For Aging Adults &amp; Their Families</div>
+        <h3>Staying home, with a little help</h3>
+        <p>For those who want to stay independent in the home they love — and for the families who live too far away to be there in person. We're reliable local eyes and hands, helping with the tasks that have gotten harder, and keeping loved ones connected and cared for.</p>
       </div>
     </div>
+
+    <div class="conc-services reveal">
+      <h3>How we help</h3>
+      <ul class="conc-list">
+        <!-- ⬇️ CONCIERGE TASK LIST — add or remove <li> lines freely ⬇️ -->
+        <li>Gardening &amp; seasonal yard help</li>
+        <li>Organizing &amp; decluttering</li>
+        <li>Water softener salt delivery &amp; refills</li>
+        <li>Filter changes, bulbs &amp; batteries</li>
+        <li>Waiting for deliveries &amp; contractors</li>
+        <li>Light housekeeping help</li>
+        <li>Seasonal setup &amp; takedown</li>
+        <li>Getting the home ready for guests</li>
+        <li>Regular check-ins &amp; companionship visits</li>
+      </ul>
+      <div class="conc-cta">
+        <a href="#contact" class="btn btn-gold">Request a Quote</a>
+      </div>
+    </div>
+
+    <!-- ⬇️ RECOVERY WATCH BAND ⬇️ -->
+    <div class="recovery reveal">
+      <div class="rec-tag">A Special Service</div>
+      <h3>Recovery Watch</h3>
+      <p>When a homeowner is in the hospital, a rehab facility, or a transitional care unit, their home shouldn't be left to fend for itself. Recovery Watch keeps a careful eye on the property throughout the stay — handling mail, checking on things, and making sure home is safe and ready for the day they return.</p>
+      <p>For families who can't be there in person, it's the reassurance that someone trustworthy and local is looking after what matters.</p>
+      <p class="rec-note">Watch begins within 48 hours of authorization.</p>
+    </div>
+
   </div>
 </section>
 
@@ -417,8 +602,8 @@ footer { background: var(--dark-2); padding: 60px 48px 40px; text-align: center;
      FOOTER
      ═══════════════════════════════════════════════════════════ -->
 <footer>
-  <div class="footer-logo">Sunbehm</div>
-  <div class="footer-tag">Trusted Care While You're Away</div>
+  <div class="footer-logo"><img src="assets/logo.png" alt="Sunbehm Home Watch &amp; Concierge"></div>
+  <div class="footer-tag">Trusted Care, Close to Home</div>
   <div class="footer-contact">
     <!-- ⬇️ CONTACT INFO ⬇️ -->
     Cory Behm, Owner<br>
