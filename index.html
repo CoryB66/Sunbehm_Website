@@ -91,7 +91,7 @@ nav.scrolled .nav-logo img { height: 44px; }
 .hero::before {
   content: ''; position: absolute; inset: 0;
   /* ⬇️ HERO BACKGROUND PHOTO — to change it, replace assets/hero-banner.png ⬇️ */
-  background: url('assets/hero-banner.png') center 38% / cover no-repeat;
+        background: url('assets/hero-sunset.jpg') center 38% / cover no-repeat;
   z-index: -2;
 }
 .hero::after {
@@ -265,6 +265,9 @@ section { padding: 110px 48px; }
 .area { background: var(--dark-2); position: relative; }
 .area-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
 .area-img img { width: 100%; height: 560px; object-fit: cover; filter: grayscale(100%); border: 1px solid var(--border); }
+
+     .area-img .frame { position: absolute; inset: 14px; border: 1px solid var(--gold); pointer-events: none; opacity: .6; }
+     .area-img { position: relative; }
 .area-text h2 { font-size: clamp(30px,4vw,46px); margin-bottom: 22px; }
 .area-text h2 .gold { color: var(--gold); font-style: italic; }
 .area-text > p { color: #d8d2c6; margin-bottom: 30px; }
@@ -533,6 +536,7 @@ footer { background: var(--dark-2); padding: 60px 48px 40px; text-align: center;
     <div class="area-img reveal">
       <!-- ⬇️ TO CHANGE THIS PHOTO: replace assets/winter-lake.jpg ⬇️ -->
       <img src="assets/winter-lake.jpg" alt="A quiet winter lake in Becker County">
+         <div class="frame"></div>
     </div>
   </div>
 </section>
@@ -609,7 +613,7 @@ footer { background: var(--dark-2); padding: 60px 48px 40px; text-align: center;
   <div class="footer-review">
     <div class="footer-stars">★ ★ ★ ★ ★</div>
     <!-- ⬇️ GOOGLE REVIEW LINK — paste your Google review URL in href="" ⬇️ -->
-    <a href="PASTE_YOUR_GOOGLE_REVIEW_LINK_HERE" class="btn btn-outline" style="font-size:11px;padding:12px 26px;">Leave a Google Review</a>
+    <a href="https://g.page/r/CSY4lweiiexDEBM/review" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:11px;padding:12px 26px;">Leave a Google Review</a>
   </div>
   <div class="footer-bottom">
     © <span id="year"></span> Sunbehm Home Watch &amp; Concierge · Locally Owned
