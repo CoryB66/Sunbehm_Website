@@ -11,6 +11,19 @@
      ═══════════════════════════════════════════════════════════ -->
 <title>Sunbehm Home Watch &amp; Concierge — Detroit Lakes &amp; Frazee, MN</title>
 <meta name="description" content="Trusted home watch and concierge care for lake homes, townhomes, condos, and year-round residents across Becker County, Minnesota. Locally owned. Trusted care, close to home.">
+<link rel="canonical" href="https://sunbehm.com/">
+
+<!-- Social sharing preview (Open Graph / Twitter) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sunbehm Home Watch &amp; Concierge">
+<meta property="og:title" content="Home Watch &amp; Concierge in Detroit Lakes, MN | Sunbehm">
+<meta property="og:description" content="Insured, bonded, NHWA-accredited home watch and concierge care for lake homes across Detroit Lakes, Frazee, and Becker County. Photo report after every visit.">
+<meta property="og:url" content="https://sunbehm.com/">
+<meta property="og:image" content="https://sunbehm.com/assets/hero-sunset.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home Watch &amp; Concierge in Detroit Lakes, MN | Sunbehm">
+<meta name="twitter:description" content="Insured, bonded, NHWA-accredited home watch and concierge care for lake homes across Detroit Lakes and Becker County.">
+<meta name="twitter:image" content="https://sunbehm.com/assets/hero-sunset.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -164,6 +177,23 @@ section { padding: 110px 48px; }
 .welcome-text h2 .gold { color: var(--gold); font-style: italic; }
 .welcome-text p { margin-bottom: 20px; color: #d8d2c6; }
 
+/* ── OUR PROMISE ───────────────────────────────── */
+.promise { background: var(--dark); }
+.promise .section-kicker { color: var(--gold); }
+.promise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.promise-card {
+  background: var(--dark-2); border: 1px solid var(--border); padding: 44px 40px;
+  transition: transform .3s, border-color .3s;
+}
+.promise-card:hover { transform: translateY(-5px); border-color: var(--gold); }
+.promise-icon {
+  width: 52px; height: 52px; border-radius: 50%; background: var(--gold); color: var(--dark);
+  display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 22px;
+}
+.promise-card h3 { font-size: 27px; color: var(--text-light); margin-bottom: 14px; }
+.promise-card p { color: #d8d2c6; font-size: 15.5px; line-height: 1.7; }
+.promise-card strong { color: var(--text-light); font-weight: 500; }
+
 /* ── SERVICES ──────────────────────────────────── */
 .services { background: var(--light); color: var(--text-dark); }
 .services .section-kicker { color: var(--gold); }
@@ -216,8 +246,18 @@ section { padding: 110px 48px; }
 .svc-quote:hover { background: var(--gold); color: #fff; }
 .svc-card.featured .svc-quote { background: var(--gold); color: #fff; border-color: var(--gold); }
 .svc-card.featured .svc-quote:hover { background: var(--gold-light); border-color: var(--gold-light); }
+/* Feature panel — fills the empty grid cell in Services */
+.svc-feature { display: flex; }
+.svc-feature-inner {
+  width: 100%; background: linear-gradient(150deg, #1A1A1A, #232323);
+  border: 1px solid var(--gold); padding: 48px 42px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.feat-kicker { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+.feat-line { font-family: 'Cormorant Garamond', serif; font-size: 26px; line-height: 1.3; color: var(--text-light); margin-bottom: 18px; }
+.feat-sub { color: #c9c2b4; font-size: 15px; line-height: 1.7; }
 
-/* ── CONCIERGE (year-round / aging adults) ─────── */
+/* ── CONCIERGE (snowbird / lake-home owners) ───── */
 .concierge { background: var(--dark); position: relative; }
 .concierge .section-kicker { color: var(--gold); }
 .conc-rate {
@@ -260,6 +300,45 @@ section { padding: 110px 48px; }
 .recovery h3 { font-size: 30px; color: var(--text-light); margin-bottom: 16px; font-style: normal; }
 .recovery p { color: #d8d2c6; font-size: 15.5px; line-height: 1.75; max-width: 64ch; margin: 0 auto 14px; }
 .recovery .rec-note { color: var(--gold); font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 19px; }
+
+/* ── OFFER TABLES  (While You're Away + STR) ────── */
+.offer { background: var(--dark-2); }
+.offer .section-kicker { color: var(--gold); }
+.offer-table-wrap { border: 1px solid var(--border); overflow-x: auto; }
+.offer-table { width: 100%; border-collapse: collapse; min-width: 520px; }
+.offer-table caption {
+  text-align: left; font-family: 'Cormorant Garamond', serif; font-size: 24px;
+  color: var(--gold); padding: 24px 22px 6px;
+}
+.offer-table th {
+  text-align: left; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gold); font-weight: 500; padding: 14px 22px;
+  border-bottom: 1px solid var(--gold);
+}
+.offer-table td {
+  padding: 16px 22px; border-bottom: 1px solid var(--border);
+  color: #d8d2c6; font-size: 15px; line-height: 1.6; vertical-align: top;
+}
+.offer-table tbody tr:last-child td { border-bottom: none; }
+.offer-table td.svc-name { color: var(--text-light); font-weight: 500; width: 36%; }
+.offer-table tbody tr:hover td { background: rgba(201,160,82,0.05); }
+.offer-cta { text-align: center; margin-top: 44px; }
+.offer-fine {
+  text-align: center; color: var(--text-muted); font-size: 13px; line-height: 1.7;
+  margin: 24px auto 0; max-width: 72ch; font-style: italic;
+}
+
+/* ── BEFORE THE SEASON (availability band) ─────── */
+.availability { background: var(--dark); }
+.avail-band {
+  background: linear-gradient(135deg, rgba(201,160,82,0.12), rgba(201,160,82,0.03));
+  border: 1px solid var(--gold); padding: 64px 48px; text-align: center;
+}
+.avail-tag { font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.avail-band h2 { font-size: clamp(30px, 4vw, 46px); color: var(--text-light); margin-bottom: 20px; }
+.avail-band p { color: #d8d2c6; font-size: 16px; line-height: 1.75; max-width: 60ch; margin: 0 auto 14px; }
+.avail-band .btn { margin-top: 26px; }
+.avail-note { color: var(--gold); font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 18px; margin-top: 22px; }
 
 /* ── SERVICE AREA ──────────────────────────────── */
 .area { background: var(--dark-2); position: relative; }
@@ -333,11 +412,57 @@ footer { background: var(--dark-2); padding: 60px 48px 40px; text-align: center;
   .welcome-grid, .area-grid { grid-template-columns: 1fr; gap: 36px; }
   .welcome-img img, .area-img img { height: 380px; }
   .svc-grid { grid-template-columns: 1fr; }
+  .promise-grid { grid-template-columns: 1fr; }
+  .avail-band { padding: 48px 24px; }
   .conc-audiences { grid-template-columns: 1fr; }
   .conc-list { grid-template-columns: 1fr; gap: 12px; }
   .form-row { grid-template-columns: 1fr; }
 }
 </style>
+
+<!-- ═══════════════════════════════════════════════════════════
+     LOCAL SEO — structured data (helps Google understand the
+     business + show it in local/map results). Keep in sync with
+     your real hours, phone, and service area.
+     ═══════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "@id": "https://sunbehm.com/#business",
+  "name": "Sunbehm Home Watch & Concierge",
+  "url": "https://sunbehm.com/",
+  "image": "https://sunbehm.com/assets/hero-sunset.jpg",
+  "logo": "https://sunbehm.com/assets/logo-full.png",
+  "telephone": "+1-218-850-8629",
+  "email": "cory@sunbehm.com",
+  "priceRange": "$$",
+  "description": "Insured, bonded, and NHWA-accredited home watch and concierge care for snowbirds and seasonal lake-home owners across Detroit Lakes, Frazee, and the Becker County lakes area of Minnesota.",
+  "founder": "Cory Behm",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Frazee",
+    "addressRegion": "MN",
+    "postalCode": "56544",
+    "addressCountry": "US"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 46.7296, "longitude": -95.7006 },
+  "areaServed": [
+    { "@type": "City", "name": "Detroit Lakes, MN" },
+    { "@type": "City", "name": "Frazee, MN" },
+    { "@type": "City", "name": "Perham, MN" },
+    { "@type": "City", "name": "Vergas, MN" },
+    { "@type": "City", "name": "Pelican Rapids, MN" }
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "08:00",
+    "closes": "16:30"
+  }],
+  "sameAs": ["https://g.page/r/CSY4lweiiexDEBM/review"]
+}
+</script>
 </head>
 <body>
 
@@ -350,6 +475,7 @@ footer { background: var(--dark-2); padding: 60px 48px 40px; text-align: center;
     <li><a href="#welcome">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#concierge">Concierge</a></li>
+    <li><a href="#str">Rentals</a></li>
     <li><a href="#area">Service Area</a></li>
     <li><a href="#contact">Contact</a></li>
     <!-- ⬇️ PHONE NUMBER (nav button). Edit in BOTH the tel: and the visible text ⬇️ -->
@@ -362,12 +488,12 @@ footer { background: var(--dark-2); padding: 60px 48px 40px; text-align: center;
      HERO  (full-screen sunset)
      ═══════════════════════════════════════════════════════════ -->
 <header class="hero" id="top">
-  <div class="hero-kicker">Home Watch &amp; Concierge</div>
-  <!-- ⬇️ MAIN HEADLINE ⬇️ -->
-        <h1>Peace of Mind, Year-Round</h1>
+  <div class="hero-kicker">Serving Detroit Lakes &amp; Becker County</div>
+  <!-- ⬇️ MAIN HEADLINE (H1 — most important SEO text on the page) ⬇️ -->
+        <h1>Home Watch &amp; Concierge in Detroit Lakes</h1>
+  <p class="hero-tagline">Peace of Mind, Year-Round</p>
   <div class="hero-actions">
-    <!-- ⬇️ PRIMARY CTA — opens the Free Estimate form in a new tab ⬇️ -->
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSau_jWaQjWWxfBMPzNIeoUpOkbG2VU3PGssHGMAhpwJ59EQ/viewform" target="_blank" rel="noopener" class="btn btn-gold">Get a Free Estimate</a>
+    <a href="#contact" class="btn btn-gold">Request a Visit</a>
     <a href="#services" class="btn btn-outline">Our Services</a>
   </div>
   <div class="scroll-cue">⌄</div>
@@ -387,8 +513,33 @@ footer { background: var(--dark-2); padding: 60px 48px 40px; text-align: center;
       <!-- ⬇️ ABOUT HEADING & PARAGRAPHS — edit freely ⬇️ -->
       <h2>Your Home in <span class="gold">Good Hands</span></h2>
       <p>Sunbehm Home Watch &amp; Concierge is locally owned and rooted right here in our community. When you're away for the season, your home deserves more than a glance through a window — it deserves a careful, trained eye and a familiar face.</p>
-      <p>Every visit is thorough, documented, and reported back to you with photos. If something needs attention, you'll know right away — and we'll help coordinate whatever comes next.</p>
-      <p>This is a community we're invested in. Your peace of mind is the whole point.</p>
+      <p>Every visit is careful and unhurried. We wear booties at the door and lay drop cloths before any work begins — small courtesies that add up to real respect for your home. Each visit is documented and reported back to you with photos, and if something needs attention, you'll know right away, with help to coordinate whatever comes next.</p>
+      <p>Your home isn't just a property — it's one of your most valuable assets, and a place that should always feel like home. We work alongside you to keep it that way, season after season. Your peace of mind is the whole point.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     OUR PROMISE   (guarantees — trust before the ask)
+     ═══════════════════════════════════════════════════════════ -->
+<section class="promise" id="promise">
+  <div class="wrap">
+    <div class="section-kicker">Our Promise</div>
+    <h2 class="section-title">Two Things You Can Count On</h2>
+    <p class="section-intro">No call centers. No apps. No wondering. Just Sunbehm — showing up on schedule and telling you exactly what we found, every single time.</p>
+    <div class="promise-grid">
+      <!-- ⬇️ GUARANTEE 1 ⬇️ -->
+      <div class="promise-card reveal">
+        <div class="promise-icon">✓</div>
+        <h3>Never a Missed Visit</h3>
+        <p>Every visit we schedule, we keep — on time, in every season. <strong>If we ever miss a scheduled visit, that visit is on us.</strong> Your home is never left waiting.</p>
+      </div>
+      <!-- ⬇️ GUARANTEE 2 ⬇️ -->
+      <div class="promise-card reveal">
+        <div class="promise-icon">✉</div>
+        <h3>A Report in Your Inbox, Every Time</h3>
+        <p>Photos and a full report are sent straight to your email the moment we leave your property. <strong>You'll never wonder whether we came — you'll see it.</strong></p>
+      </div>
     </div>
   </div>
 </section>
@@ -417,7 +568,7 @@ footer { background: var(--dark-2); padding: 60px 48px 40px; text-align: center;
           <li>Photo-documented visit report</li>
           <li>Concierge services on request</li>
         </ul>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSau_jWaQjWWxfBMPzNIeoUpOkbG2VU3PGssHGMAhpwJ59EQ/viewform" target="_blank" rel="noopener" class="svc-quote">Request a Quote</a>
+        <a href="#contact" class="svc-quote">Request a Quote</a>
       </div>
 
       <!-- ⬇️ TIER 2 — WATCH + CONCIERGE  (Most Popular) ⬇️ -->
@@ -434,7 +585,7 @@ footer { background: var(--dark-2); padding: 60px 48px 40px; text-align: center;
           <li>Priority scheduling</li>
 
         </ul>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSau_jWaQjWWxfBMPzNIeoUpOkbG2VU3PGssHGMAhpwJ59EQ/viewform" target="_blank" rel="noopener" class="svc-quote">Request a Quote</a>
+        <a href="#contact" class="svc-quote">Request a Quote</a>
       </div>
 
       <!-- ⬇️ TIER 3 — FULL SEASONAL CARE ⬇️ -->
@@ -448,74 +599,106 @@ footer { background: var(--dark-2); padding: 60px 48px 40px; text-align: center;
           <li>Photo-documented visit report</li>
           <li>First-priority scheduling</li><li>Add-ons &amp; concierge available</li>
         </ul>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSau_jWaQjWWxfBMPzNIeoUpOkbG2VU3PGssHGMAhpwJ59EQ/viewform" target="_blank" rel="noopener" class="svc-quote">Request a Quote</a>
+        <a href="#contact" class="svc-quote">Request a Quote</a>
       </div>
 
-                 <!-- TIER 4 - RECOVERY WATCH (Sunbehm Signature Service) -->
-         <div class="svc-card reveal">
-              <div class="svc-badge">Sunbehm Signature Service</div>
-              <div class="svc-num">04</div>
-              <h3>Recovery Watch</h3>
-         <p class="svc-sub">While you recover, away from home</p>
-         <ul class="svc-includes">
-         <li>Careful watch while you're in the hospital, rehab, or transitional care</li>
-         <li>Mail handled and the property checked on</li>
-         <li>Home kept safe and ready for your return</li>
-         <li>Reassurance for families who can't be there in person</li>
-         </ul>
-                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSau_jWaQjWWxfBMPzNIeoUpOkbG2VU3PGssHGMAhpwJ59EQ/viewform" target="_blank" rel="noopener" class="svc-quote">Request a Quote</a>
-         </div>
+      <!-- ⬇️ FEATURE PANEL — fills the grid space. Swap for a real photo later if you get one. ⬇️ -->
+      <div class="svc-feature reveal">
+        <div class="svc-feature-inner">
+          <div class="feat-kicker">The Sunbehm Standard</div>
+          <p class="feat-line">Booties at the door. Drop cloths before any work. A photo report in your inbox before we leave your driveway.</p>
+          <p class="feat-sub">The kind of care you'd give it yourself — because to us, it isn't a property. It's your home.</p>
+        </div>
+      </div>
 
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     CONCIERGE  (year-round help / aging adults & families)
+     CONCIERGE  (snowbird & lake-home owner support)
      ═══════════════════════════════════════════════════════════ -->
 <section class="concierge" id="concierge">
   <div class="wrap">
-    <div class="section-kicker">Year-Round Help</div>
+    <div class="section-kicker">For Lake-Home Owners</div>
     <h2 class="section-title">Concierge &amp; Home Help</h2>
-    <p class="section-intro">More than watching an empty home — a trusted local hand for the things that make daily life easier, all year long.</p>
+    <p class="section-intro">Trusted, on-the-ground help for lake-home owners while you're away — the vendor meet-ups, deliveries, mail, and small tasks that shouldn't wait until you're back.</p>
     <!-- ⬇️ CONCIERGE HOURLY RATE — edit the number if your rate changes ⬇️ -->
     <p class="conc-rate">Concierge &amp; home help — inquire for pricing</p>
 
     <div class="conc-audiences">
       <!-- ⬇️ AUDIENCE CARD 1 — SEASONAL ⬇️ -->
       <div class="aud-card reveal">
-        <div class="aud-tag">For Seasonal Residents</div>
-        <h3>Care that follows the seasons</h3>
-        <p>In the winter, we watch over your empty home. In the summer, when you're home, we're the helping hand for chores, projects, and the everyday tasks that take time away from enjoying the season. One trusted person, all year round.</p>
+        <div class="aud-tag">For Snowbirds &amp; Seasonal Owners</div>
+        <h3>Your hands on the ground</h3>
+        <p>While you're south for the winter or away for the season, we keep your lake home running — meeting vendors, receiving deliveries, handling the mail, and taking care of the small things so nothing waits until you're back.</p>
       </div>
-      <!-- ⬇️ AUDIENCE CARD 2 — AGING ADULTS & FAMILIES ⬇️ -->
+      <!-- ⬇️ AUDIENCE CARD 2 — OWNERS WITHOUT LOCAL HELP ⬇️ -->
       <div class="aud-card reveal">
-        <div class="aud-tag">For Aging Adults &amp; Their Families</div>
-        <h3>Staying home, with a little help</h3>
-        <p>For those who want to stay independent in the home they love — and for the families who live too far away to be there in person. We're reliable local eyes and hands, helping with the tasks that have gotten harder, and keeping loved ones connected and cared for.</p>
+        <div class="aud-tag">When You Have No One Local</div>
+        <h3>A trusted local contact</h3>
+        <p>For owners without family or a neighbor nearby — we're the person in town who can collect the mail, let in a contractor, and check on things when you can't. Reliable local eyes and hands, whenever you need them.</p>
       </div>
     </div>
 
-    <div class="conc-services reveal">
-      <h3>How we help</h3>
-      <ul class="conc-list">
-        <!-- ⬇️ CONCIERGE TASK LIST — add or remove <li> lines freely ⬇️ -->
-        <li>Gardening &amp; seasonal yard help</li>
-        <li>Organizing &amp; decluttering</li>
-        <li>Water softener salt delivery &amp; refills</li>
-        <li>Filter changes, bulbs &amp; batteries</li>
-        <li>Waiting for deliveries &amp; contractors</li>
-        <li>Light housekeeping help</li>
-        <li>Seasonal setup &amp; takedown</li>
-        <li>Getting the home ready for guests</li>
-        <li>Regular check-ins &amp; companionship visits</li>
-      </ul>
-      <div class="conc-cta">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSau_jWaQjWWxfBMPzNIeoUpOkbG2VU3PGssHGMAhpwJ59EQ/viewform" target="_blank" rel="noopener" class="btn btn-gold">Request a Quote</a>
-      </div>
+    <div class="offer-table-wrap reveal">
+      <table class="offer-table">
+        <caption>While You're Away</caption>
+        <thead>
+          <tr><th scope="col">Service</th><th scope="col">What it covers</th></tr>
+        </thead>
+        <tbody>
+          <!-- ⬇️ ADD OR REMOVE A ROW: copy a <tr>…</tr> line ⬇️ -->
+          <tr><td class="svc-name">Mail &amp; packages</td><td>Collected, forwarded, or held — so nothing piles up while you're gone.</td></tr>
+          <tr><td class="svc-name">Vendor &amp; contractor meet-ups</td><td>We meet plumbers, electricians, and delivery crews on site, so you never coordinate repairs from three states away.</td></tr>
+          <tr><td class="svc-name">Deliveries &amp; service calls</td><td>We wait, receive, and confirm — no missed windows.</td></tr>
+          <tr><td class="svc-name">Extended absence</td><td>Traveling, in the hospital, or in rehab? We keep the home checked, the mail handled, and everything ready for your return.</td></tr>
+          <tr><td class="svc-name">Seasonal open &amp; close</td><td>Home opened in spring and closed down in fall — done right, on time.</td></tr>
+          <tr><td class="svc-name">Small tasks &amp; supply runs</td><td>Softener salt, filters, bulbs, and the little errands that keep a home running.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="offer-cta">
+      <a href="#contact" class="btn btn-gold">Request a Quote</a>
     </div>
 
 
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SHORT-TERM RENTAL SUPPORT  (Airbnb / VRBO co-hosting)
+     COMPLIANCE: keep this flat-fee & owner-direct. Owner stays host
+     of record. Do NOT add "% of revenue" or "we manage your rental"
+     language without written MN Commerce confirmation (MN Ch. 82).
+     ═══════════════════════════════════════════════════════════ -->
+<section class="offer" id="str">
+  <div class="wrap">
+    <div class="section-kicker">Airbnb &amp; VRBO</div>
+    <h2 class="section-title">Short-Term Rental Support</h2>
+    <p class="section-intro">Renting your lake place while you're away? We're your local co-host — you stay the host of record, and we handle everything that happens on the ground between guests.</p>
+    <div class="offer-table-wrap reveal">
+      <table class="offer-table">
+        <caption>What We Handle</caption>
+        <thead>
+          <tr><th scope="col">Service</th><th scope="col">What it includes</th></tr>
+        </thead>
+        <tbody>
+          <!-- ⬇️ ADD OR REMOVE A ROW: copy a <tr>…</tr> line ⬇️ -->
+          <tr><td class="svc-name">Guest turnovers</td><td>Cleaning coordinated and inspected between every stay, so each guest arrives to a spotless home.</td></tr>
+          <tr><td class="svc-name">Guest-ready inspection</td><td>A pre-arrival walk-through — heat, water, lights, and supplies all confirmed before check-in.</td></tr>
+          <tr><td class="svc-name">Restock &amp; essentials</td><td>Linens, towels, paper goods, coffee, and the basics kept stocked and ready.</td></tr>
+          <tr><td class="svc-name">Guest access</td><td>Keys, lockboxes, and door codes managed, so guests get in smoothly without you.</td></tr>
+          <tr><td class="svc-name">On-call for guest issues</td><td>A local number for problems mid-stay — you're not fielding calls from three states away.</td></tr>
+          <tr><td class="svc-name">Post-checkout check</td><td>A damage and left-behind sweep with a photo report after every departure.</td></tr>
+          <tr><td class="svc-name">Seasonal &amp; listing support</td><td>Spring open, fall close, and coordinating fresh listing photos when the home changes.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="offer-cta">
+      <a href="#contact" class="btn btn-gold">Request a Quote</a>
+    </div>
+    <p class="offer-fine">You remain the host of record. Sunbehm provides flat-fee, owner-direct services only — we never collect, hold, or take a percentage of your rental income.</p>
   </div>
 </section>
 
@@ -529,23 +712,40 @@ footer { background: var(--dark-2); padding: 60px 48px 40px; text-align: center;
               <p>Serving the communities of Becker and Ottertail Counties and the surrounding communities.</p>
       <!-- ⬇️ TOWNS — add or remove a <span> to change the list ⬇️ -->
       <div class="town-list">
-        <span class="town">Detroit Lakes</span>
-        <span class="town">Pelican Rapids</span>
-        <span class="town">Vergas</span>
-        <span class="town">Cormorant</span>
-        <span class="town">Richwood</span>
-        <span class="town">Shoreham</span>
-        <span class="town">Perham</span>
-        <span class="town">Rochert</span>
+        <a href="home-watch-detroit-lakes.html" class="town" style="text-decoration:none;">Detroit Lakes</a>
+        <a href="home-watch-frazee.html" class="town" style="text-decoration:none;">Frazee</a>
+        <a href="home-watch-perham.html" class="town" style="text-decoration:none;">Perham</a>
+        <a href="home-watch-pelican-rapids.html" class="town" style="text-decoration:none;">Pelican Rapids</a>
+        <a href="home-watch-vergas.html" class="town" style="text-decoration:none;">Vergas</a>
+        <a href="home-watch-cormorant.html" class="town" style="text-decoration:none;">Cormorant</a>
+        <a href="home-watch-lake-park.html" class="town" style="text-decoration:none;">Lake Park</a>
+        <a href="home-watch-audubon.html" class="town" style="text-decoration:none;">Audubon</a>
+        <a href="home-watch-callaway.html" class="town" style="text-decoration:none;">Callaway</a>
+        <a href="home-watch-ogema.html" class="town" style="text-decoration:none;">Ogema</a>
+        <a href="home-watch-dent.html" class="town" style="text-decoration:none;">Dent</a>
       </div>
       <!-- ⬇️ LAKES LINE — edit this to match the lakes you actually serve ⬇️ -->
-      <p class="lakes-line">Serving the surrounding lakes — including Big Detroit, Sallie, Melissa, Cormorant, Pelican, and the Pine Lakes.</p>
+      <p class="lakes-line">Serving the surrounding lakes — including Detroit Lake, Sallie, Melissa, Floyd, Big Cormorant, Pelican, and Height of Land.</p>
     </div>
     <div class="area-img reveal">
       <!-- ⬇️ TO CHANGE THIS PHOTO: replace assets/winter-lake.jpg ⬇️ -->
       <img src="assets/winter-lake.jpg" alt="A quiet winter lake in Becker County">
          <div class="frame"></div>
     </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     BEFORE THE SEASON   (limited availability / urgency)
+     ═══════════════════════════════════════════════════════════ -->
+<section class="availability" id="availability">
+  <div class="wrap avail-band reveal">
+    <div class="avail-tag">Before the Season</div>
+    <h2>Reserve Your Watch Before You Go</h2>
+    <p>The best time to protect your home is before you leave it. Each season, Sunbehm sets up new homes on a first-come basis — so the earlier you reach out, the smoother your start.</p>
+    <p>On a lake, in town, or down a quiet county road — wherever your home sits across Becker and Ottertail Counties, we'd be glad to care for it while you're away.</p>
+    <a href="#contact" class="btn btn-gold">Reserve Your Spot for the Season</a>
+    <div class="avail-note">Now onboarding homes for the coming season</div>
   </div>
 </section>
 
@@ -612,10 +812,6 @@ footer { background: var(--dark-2); padding: 60px 48px 40px; text-align: center;
 <footer>
   <div class="footer-logo"><img src="assets/logo-full.png" alt="Sunbehm Home Watch &amp; Concierge"></div>
   <div class="footer-tag">Peace of Mind, Year-Round</div>
-  <!-- ⬇️ FREE ESTIMATE CTA — opens the Free Estimate form in a new tab ⬇️ -->
-  <div style="margin: 8px 0 30px;">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSau_jWaQjWWxfBMPzNIeoUpOkbG2VU3PGssHGMAhpwJ59EQ/viewform" target="_blank" rel="noopener" class="btn btn-gold">Get a Free Estimate</a>
-  </div>
   <div class="footer-contact">
     <!-- ⬇️ CONTACT INFO ⬇️ -->
     Cory Behm, Owner<br>

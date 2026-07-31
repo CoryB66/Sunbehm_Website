@@ -1,0 +1,101 @@
+/* ═══════════════════════════════════════════════════════════
+   Sunbehm — shared stylesheet for town / location pages
+   Matches the main site brand (Cormorant Garamond + Montserrat).
+   Every location page links this one file, so edits here apply
+   to all of them at once.
+   ═══════════════════════════════════════════════════════════ */
+:root{
+  --gold:#C9A052; --gold-light:#E0BD74; --dark:#1A1A1A; --dark-2:#232323;
+  --light:#F5F1E8; --text-light:#F5F1E8; --text-dark:#2A2622; --text-muted:#9A9182;
+  --border:rgba(201,160,82,0.20);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--dark);color:var(--text-light);font-family:'Montserrat',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:1.15;}
+a{color:inherit;}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:linear-gradient(to bottom,rgba(26,26,26,0.94),rgba(26,26,26,0));transition:background .35s,padding .35s;}
+nav.scrolled{background:rgba(26,26,26,0.97);padding:12px 48px;box-shadow:0 1px 0 var(--border);}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;letter-spacing:5px;text-transform:uppercase;color:var(--gold);}
+.nav-logo img{height:50px;width:auto;display:block;}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center;}
+.nav-links a{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-light);text-decoration:none;transition:color .2s;text-shadow:0 1px 4px rgba(0,0,0,0.6);}
+.nav-links a:hover{color:var(--gold);}
+.nav-call{font-size:15px;font-weight:700;color:#fff;background:rgba(26,26,26,0.92);padding:12px 22px;text-decoration:none;border-radius:2px;border:2px solid var(--gold);text-transform:none;}
+.nav-call:hover{background:var(--gold);color:var(--dark);}
+.nav-toggle{display:none;background:none;border:none;color:var(--gold);font-size:26px;cursor:pointer;}
+
+/* hero */
+.hero{position:relative;min-height:64vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 76px;}
+.hero::before{content:'';position:absolute;inset:0;background:url('assets/hero-sunset.jpg') center 42%/cover no-repeat;z-index:-2;}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,26,26,0.55),rgba(26,26,26,0.42) 45%,rgba(26,26,26,0.9));z-index:-1;}
+.hero-kicker{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:22px;}
+.hero h1{font-size:clamp(38px,6.5vw,72px);max-width:18ch;text-shadow:0 2px 30px rgba(0,0,0,.5);}
+.hero-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,3vw,27px);color:var(--light);margin-top:18px;max-width:42ch;}
+.hero-actions{margin-top:40px;display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
+
+/* buttons */
+.btn{font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:16px 34px;border-radius:2px;transition:all .25s;display:inline-block;}
+.btn-gold{background:var(--gold);color:var(--dark);border:2px solid var(--gold);}
+.btn-gold:hover{background:var(--gold-light);border-color:var(--gold-light);transform:translateY(-2px);}
+.btn-outline{background:rgba(255,255,255,.08);border:2px solid #fff;color:#fff;}
+.btn-outline:hover{background:#fff;color:var(--dark);}
+.btn-outline-gold{background:transparent;border:1px solid var(--gold);color:var(--gold);}
+.btn-outline-gold:hover{background:var(--gold);color:var(--dark);}
+
+/* sections */
+section{padding:88px 48px;}
+.wrap{max-width:1040px;margin:0 auto;}
+.kicker{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:14px;}
+.title{font-size:clamp(28px,4.5vw,44px);text-align:center;margin-bottom:22px;}
+.lede{max-width:68ch;margin:0 auto;color:#d8d2c6;font-size:16.5px;}
+.lede p{margin-bottom:18px;}
+.section-light{background:var(--light);color:var(--text-dark);}
+.section-light .title{color:var(--text-dark);}
+.section-light .lede{color:#5a5346;}
+.section-alt{background:var(--dark-2);}
+.center{text-align:center;}
+.cta-row{text-align:center;margin-top:36px;}
+
+/* feature cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:12px;}
+.card{background:var(--dark-2);border:1px solid var(--border);padding:32px 28px;transition:transform .3s,border-color .3s;}
+.section-light .card{background:#fff;border-color:#e6ddc9;}
+.card:hover{transform:translateY(-5px);border-color:var(--gold);}
+.card h3{font-size:22px;margin-bottom:10px;color:var(--gold);}
+.section-light .card h3{color:var(--text-dark);}
+.card p{font-size:14.5px;color:#c9c2b4;line-height:1.65;}
+.section-light .card p{color:#5a5346;}
+
+/* lakes / chips */
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:8px;}
+.chip{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);border:1px solid var(--border);padding:8px 16px;border-radius:1px;}
+
+/* nearby links */
+.nearby{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:10px;}
+.nearby a{font-size:13px;letter-spacing:1px;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:2px;}
+.nearby a:hover{color:var(--gold-light);}
+
+/* trust band */
+.trust{background:linear-gradient(135deg,rgba(201,160,82,0.12),rgba(201,160,82,0.03));border:1px solid var(--gold);padding:44px 40px;text-align:center;}
+.trust p{color:#d8d2c6;font-size:16px;max-width:64ch;margin:0 auto;}
+.trust strong{color:var(--text-light);font-weight:500;}
+.stars{color:var(--gold);font-size:18px;letter-spacing:4px;margin-bottom:14px;}
+
+/* footer */
+footer{background:var(--dark-2);padding:52px 48px 36px;text-align:center;border-top:1px solid var(--border);}
+.footer-logo img{height:110px;width:auto;}
+.footer-tag{font-style:italic;font-family:'Cormorant Garamond',serif;color:var(--text-muted);margin:8px 0 22px;}
+.footer-contact{color:var(--text-muted);font-size:14px;line-height:2;}
+.footer-contact a{color:var(--text-light);text-decoration:none;}
+.footer-contact a:hover{color:var(--gold);}
+.footer-bottom{margin-top:28px;padding-top:20px;border-top:1px solid var(--border);color:var(--text-muted);font-size:12px;letter-spacing:1px;}
+
+@media(max-width:900px){.cards{grid-template-columns:1fr 1fr;}}
+@media(max-width:860px){
+  nav{padding:16px 20px;} .nav-links{display:none;} .nav-toggle{display:block;}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;right:0;left:0;background:rgba(26,26,26,0.98);padding:22px 20px;gap:18px;}
+  section{padding:60px 20px;} .cards{grid-template-columns:1fr;}
+}
