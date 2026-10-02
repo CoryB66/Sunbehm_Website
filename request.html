@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>Service Request · Sunbehm Home Watch</title>
+<style>
+  :root{--bg:#f4f1ea;--card:#fff;--line:#e6dfd0;--gold:#a07830;--goldfill:#c9a052;--goldline:#c2ad85;--ink:#221c10;--mid:#7a7060;--panel:#fbf7ee;--err:#a32d2d}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;-webkit-text-size-adjust:100%}
+  .wrap{max-width:520px;margin:0 auto;padding:24px 16px 40px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:30px 26px}
+  .mark{display:block;width:55px;height:auto;margin:0 auto 8px}
+  .brand{text-align:center;font-family:Georgia,'Palatino Linotype',Palatino,serif;font-size:12px;font-weight:600;color:var(--gold);letter-spacing:.5px;margin:0 0 18px}
+  .badge{text-align:center;color:var(--gold);font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;margin:0 0 6px}
+  h1{font-family:Georgia,'Palatino Linotype',Palatino,serif;font-size:22px;font-weight:700;text-align:center;margin:0 0 6px}
+  .addr{text-align:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;font-size:15px;font-weight:600;margin:0 0 22px;min-height:1px}
+  label.q{display:block;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin:0 0 8px}
+  textarea{width:100%;min-height:130px;border:1px solid var(--goldline);border-radius:8px;padding:12px 14px;font:16px/1.5 Arial,Helvetica,sans-serif;color:var(--ink);resize:vertical}
+  textarea:focus,input[type=date]:focus{outline:2px solid var(--goldfill);outline-offset:1px}
+  .count{text-align:right;font-size:11px;color:var(--mid);margin:4px 0 20px}
+  .opts{display:grid;gap:10px;margin:0 0 8px}
+  .opt{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:8px;padding:14px;cursor:pointer;font-size:15px;background:#fff}
+  .opt input{accent-color:var(--gold);width:18px;height:18px;margin:0}
+  .opt:has(input:checked){border-color:var(--goldfill);background:var(--panel)}
+  #dateRow{display:none;margin:4px 0 0}
+  input[type=date]{width:100%;border:1px solid var(--goldline);border-radius:8px;padding:12px 14px;font:16px Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  button{display:block;width:100%;margin:24px 0 0;border:0;border-radius:8px;padding:16px 20px;background:var(--goldfill);color:#1a1600;font:600 16px Arial,Helvetica,sans-serif;letter-spacing:.3px;cursor:pointer}
+  button[disabled]{opacity:.6;cursor:default}
+  .msg{margin:14px 0 0;font-size:14px;color:var(--err);text-align:center;min-height:1px}
+  .urgent{margin:22px 0 0;padding:14px 16px;background:var(--panel);border:1px solid var(--line);border-radius:10px;text-align:center;font-size:14px;line-height:1.55}
+  .urgent a{color:var(--gold);font-weight:600;text-decoration:none;white-space:nowrap}
+  .done{text-align:center}
+  .done .check{width:52px;height:52px;border-radius:50%;background:var(--panel);border:1px solid var(--goldline);color:var(--gold);font-size:26px;line-height:50px;margin:6px auto 14px}
+  .done p{font-size:15px;line-height:1.6;margin:0 0 10px}
+  .foot{text-align:center;font-size:12px;color:var(--mid);margin:18px 0 0}
+  .foot a{color:var(--gold);text-decoration:none}
+  [hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <img class="mark" src="/assets/lotus-mark.png" alt="">
+    <p class="brand">Sunbehm Home Watch &amp; Concierge</p>
+
+    <form id="f" novalidate>
+      <p class="badge">Service Request</p>
+      <h1>How can we help?</h1>
+      <p class="addr" id="addr"></p>
+
+      <label class="q" for="req">What do you need?</label>
+      <textarea id="req" maxlength="2000" placeholder="e.g. Replace the furnace filter and check the garage door seal." required></textarea>
+      <div class="count"><span id="n">0</span> / 2000</div>
+
+      <label class="q">When?</label>
+      <div class="opts" role="radiogroup">
+        <label class="opt"><input type="radio" name="when" value="next" checked> At my next visit</label>
+        <label class="opt"><input type="radio" name="when" value="before"> Before I return home</label>
+        <label class="opt"><input type="radio" name="when" value="date"> By a specific date</label>
+      </div>
+      <div id="dateRow"><input type="date" id="date" aria-label="Date"></div>
+
+      <div class="hp" aria-hidden="true"><label>Website <input type="text" id="website" tabindex="-1" autocomplete="off"></label></div>
+
+      <button type="submit" id="go">Send Request</button>
+      <p class="msg" id="msg" role="alert"></p>
+
+      <div class="urgent">Something urgent? Please call or text Cory<br>
+        <a href="tel:+12188508629">Call (218) 850-8629</a> &nbsp;&#183;&nbsp; <a href="sms:+12188508629">Text</a></div>
+    </form>
+
+    <div class="done" id="done" hidden>
+      <div class="check">&#10003;</div>
+      <h1>Request received</h1>
+      <p>Cory will confirm within one business day.<br>A copy is on its way to your inbox.</p>
+      <div class="urgent">Something urgent? <a href="tel:+12188508629">Call</a> or <a href="sms:+12188508629">text</a> (218) 850-8629</div>
+    </div>
+
+    <div class="done" id="dead" hidden>
+      <h1>Let's do this by phone</h1>
+      <p id="deadMsg">This request link has expired or isn't complete.</p>
+      <div class="urgent"><a href="tel:+12188508629">Call (218) 850-8629</a> &nbsp;&#183;&nbsp; <a href="sms:+12188508629">Text</a><br>
+        or email <a href="mailto:cory@sunbehm.com">cory@sunbehm.com</a></div>
+    </div>
+  </div>
+  <p class="foot"><a href="https://sunbehm.com">sunbehm.com</a></p>
+</div>
+
+<script>
+(function () {
+  // Plain /exec URL (NOT the /a/macros/sunbehm.com form) - anonymous POSTs, same as the webhooks.
+  var EXEC = 'https://script.google.com/macros/s/AKfycbwKP9ArWj1pPVUu8Af4VR9JrK2O54drQWKM6Uxg8R85jz8NXJzG6W7EPUR-iHPK6iGSmQ/exec';
+  var q = new URLSearchParams(location.search);
+  var token = q.get('c') || '';
+  var $ = function (id) { return document.getElementById(id); };
+
+  function dead(text) {
+    $('f').hidden = true; $('done').hidden = true; $('dead').hidden = false;
+    if (text) $('deadMsg').textContent = text;
+  }
+  if (!/^[^.]+\.\d+\.[A-Za-z0-9_-]+$/.test(token)) { dead(); return; }
+
+  $('addr').textContent = (q.get('p') || '').slice(0, 120);   // display only; server uses the registry
+
+  // Date picker: today .. +1 year
+  var t = new Date(), iso = function (d) { return new Date(d - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10); };
+  $('date').min = iso(t); var mx = new Date(t); mx.setFullYear(mx.getFullYear() + 1); $('date').max = iso(mx);
+
+  $('req').addEventListener('input', function () { $('n').textContent = this.value.length; });
+  document.querySelectorAll('input[name=when]').forEach(function (r) {
+    r.addEventListener('change', function () { $('dateRow').style.display = (this.value === 'date') ? 'block' : 'none'; });
+  });
+
+  $('f').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var text = $('req').value.trim();
+    var when = (document.querySelector('input[name=when]:checked') || {}).value;
+    var date = $('date').value;
+    $('msg').textContent = '';
+    if (text.length < 3) { $('msg').textContent = 'Please tell us what you need.'; $('req').focus(); return; }
+    if (when === 'date' && !date) { $('msg').textContent = 'Please pick a date.'; $('date').focus(); return; }
+
+    var btn = $('go'); btn.disabled = true; btn.textContent = 'Sending…';
+    var payload = JSON.stringify({ type: 'service_request', c: token, request: text, when: when,
+                                   date: when === 'date' ? date : '', website: $('website').value });
+    // text/plain = "simple" CORS request: no preflight, no Google cookies sent.
+    fetch(EXEC, { method: 'POST', body: payload, headers: { 'Content-Type': 'text/plain;charset=utf-8' } })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (res && res.ok) { $('f').hidden = true; $('done').hidden = false; window.scrollTo(0, 0); return; }
+        var err = res && res.error;
+        if (err === 'expired') return dead('This request link has expired.');
+        btn.disabled = false; btn.textContent = 'Send Request';
+        $('msg').textContent = err === 'busy' ? 'You’ve sent several requests already. Please call or text Cory.'
+                             : err === 'invalid' ? 'Please check your request and try again.'
+                             : 'Something went wrong. Please call or text Cory at (218) 850-8629.';
+      })
+      .catch(function () {
+        btn.disabled = false; btn.textContent = 'Send Request';
+        $('msg').textContent = 'We couldn’t confirm it was sent. If you don’t get a confirmation email in a few minutes, please call or text (218) 850-8629.';
+      });
+  });
+})();
+</script>
+</body>
+</html>
