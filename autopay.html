@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="format-detection" content="telephone=no">
+<title>Set Up Autopay · Sunbehm Home Watch</title>
+<style>
+  :root{--bg:#f4f1ea;--card:#fff;--line:#e6dfd0;--gold:#a07830;--goldfill:#c9a052;--goldline:#c2ad85;--ink:#221c10;--mid:#7a7060;--panel:#fbf7ee;--err:#9a3b1b;--black:#0a0a06}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;-webkit-text-size-adjust:100%}
+  .wrap{max-width:520px;margin:0 auto;padding:24px 16px 40px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:30px 26px}
+  .mark{display:block;width:55px;height:auto;margin:0 auto 8px}
+  .brand{text-align:center;font-family:Georgia,'Palatino Linotype',Palatino,serif;font-size:12px;font-weight:600;color:var(--gold);letter-spacing:.5px;margin:0 0 22px}
+  .badge{text-align:center;color:var(--gold);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin:0 0 8px}
+  h1{font-family:Georgia,'Palatino Linotype',Palatino,serif;font-size:24px;font-weight:400;text-align:center;margin:0 0 14px;line-height:1.25}
+  p.lead{text-align:center;font-size:15px;line-height:1.6;color:var(--mid);margin:0 0 6px}
+  .spin{width:34px;height:34px;margin:18px auto 4px;border:3px solid var(--line);border-top-color:var(--goldfill);border-radius:50%;animation:s 0.9s linear infinite}
+  @keyframes s{to{transform:rotate(360deg)}}
+  .note{margin:20px 0 0;padding:14px 16px;background:var(--panel);border:1px solid var(--line);border-radius:10px;text-align:center;font-size:14px;line-height:1.55}
+  .note.err{color:var(--err);font-weight:600}
+  .note a{color:var(--gold);font-weight:600;text-decoration:none;white-space:nowrap}
+  button{display:block;width:100%;margin:20px 0 0;border:0;border-radius:8px;padding:16px 20px;background:var(--black);color:var(--goldfill);font:700 16px Arial,Helvetica,sans-serif;letter-spacing:.3px;cursor:pointer}
+  .bfoot{text-align:center;border-top:1px solid var(--line);margin:26px -26px 0;padding:22px 26px 0}
+  .bfoot .bname{font-family:Georgia,'Palatino Linotype',Palatino,serif;font-size:12px;font-weight:600;color:var(--gold);margin:0 0 4px;white-space:nowrap}
+  .bfoot p{margin:0 0 2px;font-size:12px;color:var(--mid)}
+  .bfoot a{color:var(--gold);text-decoration:none;white-space:nowrap}
+  [hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <img class="mark" src="/assets/lotus-mark.png" alt="">
+    <p class="brand">Sunbehm Home Watch &amp; Concierge</p>
+
+    <p class="badge">Autopay</p>
+    <h1 id="title">Opening secure card setup&hellip;</h1>
+    <p class="lead" id="lead">You&rsquo;ll add your card on Stripe&rsquo;s secure page. Each monthly statement is then paid automatically.</p>
+    <div class="spin" id="spin"></div>
+
+    <div class="note err" id="msg" hidden></div>
+    <button id="retry" type="button" hidden>Try again</button>
+    <noscript><div class="note err">Please turn on JavaScript, or call or text <a href="tel:+12188508629">(218) 850-8629</a>. Nothing was changed.</div></noscript>
+
+    <div class="bfoot">
+      <p class="bname">Sunbehm Home Watch &amp; Concierge</p>
+      <p>Cory Behm &middot; Owner &amp; Operator</p>
+      <p><a href="tel:+12188508629">(218) 850-8629</a> &middot; <a href="https://sunbehm.com">sunbehm.com</a></p>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  // Same Apps Script deployment as request.html and /client.
+  var EXEC = 'https://script.google.com/macros/s/AKfycbwKP9ArWj1pPVUu8Af4VR9JrK2O54drQWKM6Uxg8R85jz8NXJzG6W7EPUR-iHPK6iGSmQ/exec';
+  var PHONE = '<a href="tel:+12188508629">(218) 850-8629</a>';
+  var t = new URLSearchParams(location.search).get('t') || '';
+  var $ = function (id) { return document.getElementById(id); };
+
+  function fail(title, html, canRetry) {
+    $('spin').hidden = true;
+    $('title').textContent = title;
+    $('lead').hidden = true;
+    $('msg').innerHTML = html;
+    $('msg').hidden = false;
+    $('retry').hidden = !canRetry;
+  }
+
+  function go() {
+    $('spin').hidden = false; $('msg').hidden = true; $('retry').hidden = true; $('lead').hidden = false;
+    $('title').innerHTML = 'Opening secure card setup&hellip;';
+    if (!t) return fail('This link is incomplete', 'Please use the <b>Set Up Autopay</b> button in your Sunbehm email, or call or text ' + PHONE + '. Nothing was changed.', false);
+    if (navigator.onLine === false) return fail('No connection', 'Nothing was changed. Try again when you have signal, or call or text ' + PHONE + '.', true);
+
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 20000);
+    fetch(EXEC, { method: 'POST', body: JSON.stringify({ type: 'autopay_setup', t: t }),
+                  headers: { 'Content-Type': 'text/plain;charset=utf-8' }, signal: ctrl ? ctrl.signal : undefined })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        clearTimeout(timer);
+        if (d && d.ok && d.url && /^https:\/\/billing\.stripe\.com\//.test(d.url)) { location.replace(d.url); return; }
+        var e = d && d.error;
+        if (e === 'expired') return fail('This link has expired', 'Use the <b>Set Up Autopay</b> button on your most recent Sunbehm statement, or call or text ' + PHONE + '. Nothing was changed.', false);
+        if (e === 'paused')  return fail('Autopay isn’t available yet', 'Nothing was changed. Your statements still have a Pay Now button. Questions? Call or text ' + PHONE + '.', false);
+        fail('Something went wrong', 'Nothing was changed. Please try again, or call or text ' + PHONE + '.', true);
+      })
+      .catch(function () {
+        clearTimeout(timer);
+        fail('No connection', 'Nothing was changed. Try again when you have signal, or call or text ' + PHONE + '.', true);
+      });
+  }
+
+  $('retry').addEventListener('click', go);
+  go();
+})();
+</script>
+</body>
+</html>

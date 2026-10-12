@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>Autopay · Sunbehm Home Watch</title>
+<style>
+  :root{--bg:#f4f1ea;--card:#fff;--line:#e6dfd0;--gold:#a07830;--goldfill:#c9a052;--goldline:#c2ad85;--ink:#221c10;--mid:#7a7060;--panel:#fbf7ee}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;-webkit-text-size-adjust:100%}
+  .wrap{max-width:520px;margin:0 auto;padding:24px 16px 40px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:30px 26px;text-align:center}
+  .mark{display:block;width:55px;height:auto;margin:0 auto 8px}
+  .brand{font-family:Georgia,'Palatino Linotype',Palatino,serif;font-size:12px;font-weight:600;color:var(--gold);letter-spacing:.5px;margin:0 0 22px}
+  .check{width:56px;height:56px;border-radius:50%;background:var(--panel);border:1px solid var(--goldline);color:var(--gold);font-size:28px;line-height:54px;margin:4px auto 14px}
+  .badge{color:var(--gold);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin:0 0 8px}
+  h1{font-family:Georgia,'Palatino Linotype',Palatino,serif;font-size:26px;font-weight:400;margin:0 0 14px;line-height:1.25}
+  p.lead{font-size:15px;line-height:1.6;color:var(--ink);margin:0 0 10px}
+  p.sub{font-size:13px;line-height:1.6;color:var(--mid);margin:0}
+  .bfoot{border-top:1px solid var(--line);margin:26px -26px 0;padding:22px 26px 0}
+  .bfoot .bname{font-family:Georgia,'Palatino Linotype',Palatino,serif;font-size:12px;font-weight:600;color:var(--gold);margin:0 0 4px;white-space:nowrap}
+  .bfoot p{margin:0 0 2px;font-size:12px;color:var(--mid)}
+  .bfoot a{color:var(--gold);text-decoration:none;white-space:nowrap}
+  [hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <img class="mark" src="/assets/lotus-mark.png" alt="">
+    <p class="brand">Sunbehm Home Watch &amp; Concierge</p>
+
+    <div id="ok">
+      <div class="check">&#10003;</div>
+      <p class="badge">Autopay On</p>
+      <h1>You&rsquo;re all set</h1>
+      <p class="lead">Your monthly statement will be charged to the card you just saved.</p>
+      <p class="sub">A confirmation email is on its way. To turn autopay off, remove your card using Manage Billing on any statement.</p>
+    </div>
+
+    <div id="cancel" hidden>
+      <p class="badge">Autopay</p>
+      <h1>No changes made</h1>
+      <p class="lead">Autopay was not turned on. Your statements will keep their Pay Now button.</p>
+      <p class="sub">You can set it up any time with the Set Up Autopay button on your statement.</p>
+    </div>
+
+    <div class="bfoot">
+      <p class="bname">Sunbehm Home Watch &amp; Concierge</p>
+      <p>Cory Behm &middot; Owner &amp; Operator</p>
+      <p><a href="tel:+12188508629">(218) 850-8629</a> &middot; <a href="https://sunbehm.com">sunbehm.com</a></p>
+    </div>
+  </div>
+</div>
+<script>
+  if (new URLSearchParams(location.search).get('cancel')) {
+    document.getElementById('ok').hidden = true;
+    document.getElementById('cancel').hidden = false;
+  }
+</script>
+</body>
+</html>
