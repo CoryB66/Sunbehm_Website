@@ -39,7 +39,7 @@
 
     <p class="badge">Autopay</p>
     <h1 id="title">Opening secure card setup&hellip;</h1>
-    <p class="lead" id="lead">You&rsquo;ll add your card on Stripe&rsquo;s secure page. Each monthly statement is then paid automatically.</p>
+    <p class="lead" id="lead">You&rsquo;ll add your card on Stripe&rsquo;s secure page. Each Sunbehm invoice is then paid automatically.</p>
     <div class="spin" id="spin"></div>
 
     <div class="note err" id="msg" hidden></div>
@@ -85,8 +85,8 @@
         clearTimeout(timer);
         if (d && d.ok && d.url && /^https:\/\/billing\.stripe\.com\//.test(d.url)) { location.replace(d.url); return; }
         var e = d && d.error;
-        if (e === 'expired') return fail('This link has expired', 'Use the <b>Set Up Autopay</b> button on your most recent Sunbehm statement, or call or text ' + PHONE + '. Nothing was changed.', false);
-        if (e === 'paused')  return fail('Autopay isn’t available yet', 'Nothing was changed. Your statements still have a Pay Now button. Questions? Call or text ' + PHONE + '.', false);
+        if (e === 'expired') return fail('This link has expired', 'Use the <b>Set Up Autopay</b> button in your most recent Sunbehm email, or call or text ' + PHONE + '. Nothing was changed.', false);
+        if (e === 'paused')  return fail('Autopay isn’t available yet', 'Nothing was changed. Your invoices still have a Pay Now button. Questions? Call or text ' + PHONE + '.', false);
         fail('Something went wrong', 'Nothing was changed. Please try again, or call or text ' + PHONE + '.', true);
       })
       .catch(function () {
